@@ -1,0 +1,37 @@
+
+
+grant codeBase "file:/media/objeleana/Data/jde/project/github/wro4j/nashorn-backport/build/nashorn-internal-tests.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:/media/objeleana/Data/jde/project/github/wro4j/nashorn-backport/test/lib/testng.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:/media/objeleana/Data/jde/project/github/wro4j/nashorn-backport/test/script/trusted/*" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:/media/objeleana/Data/jde/project/github/wro4j/nashorn-backport/test/script/basic/*" {
+    permission java.io.FilePermission "/media/objeleana/Data/jde/project/github/wro4j/nashorn-backport/test/script/-", "read";
+    permission java.io.FilePermission "${user.dir}", "read";
+    permission java.util.PropertyPermission "user.dir", "read";
+    permission java.util.PropertyPermission "nashorn.test.*", "read";
+};
+
+grant codeBase "file:/media/objeleana/Data/jde/project/github/wro4j/nashorn-backport/test/script/basic/parser/*" {
+    permission java.io.FilePermission "/media/objeleana/Data/jde/project/github/wro4j/nashorn-backport/test/script/-", "read";
+    permission java.io.FilePermission "${user.dir}", "read";
+    permission java.util.PropertyPermission "user.dir", "read";
+    permission java.util.PropertyPermission "nashorn.test.*", "read";
+};
+
+grant codeBase "file:/media/objeleana/Data/jde/project/github/wro4j/nashorn-backport/test/script/basic/JDK-8010946-privileged.js" {
+    permission java.util.PropertyPermission "java.security.policy", "read";
+};
+
+grant codeBase "file:/media/objeleana/Data/jde/project/github/wro4j/nashorn-backport/test/script/basic/classloader.js" {
+    permission java.lang.RuntimePermission "nashorn.JavaReflection";
+};
+
+    
